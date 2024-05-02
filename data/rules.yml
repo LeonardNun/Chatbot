@@ -1,0 +1,52 @@
+version: "3.1"
+
+rules:
+  - rule: Responder a solicitação de suporte técnico
+    steps:
+      - intent: solicitar_suporte
+      - action: utter_solicitar_suporte
+
+  - rule: Responder a perguntas sobre a garantia do produto
+    steps:
+      - intent: perguntar_garantia
+      - action: utter_perguntar_garantia
+
+  - rule: Acompanhar um pedido de reparo
+    steps:
+      - intent: acompanhar_pedido_reparo
+      - action: utter_acompanhar_pedido_reparo
+
+  - rule: Fornecer informações sobre um produto
+    steps:
+      - intent: solicitar_informacoes_produto
+      - action: utter_solicitar_informacoes_produto
+
+  - rule: Reportar um problema com o produto
+    steps:
+      - intent: reportar_problema_produto
+      - action: utter_reportar_problema_produto
+
+  - rule: Informar sobre atualizações de produtos
+    steps:
+      - intent: perguntar_atualizacoes_produto
+      - action: utter_perguntar_atualizacoes_produto
+
+  - rule: Assistir na configuração de um produto
+    steps:
+      - intent: solicitar_assistencia_configuracao
+      - action: utter_solicitar_assistencia_configuracao
+
+  - rule: Receber feedback sobre o serviço
+    steps:
+      - intent: dar_feedback_servico
+      - action: utter_dar_feedback_servico
+
+  - rule: Informar sobre locais de assistência técnica
+    steps:
+      - intent: perguntar_locais_assistencia
+      - action: utter_perguntar_locais_assistencia
+
+  - rule: Fornecer termos e condições de serviço
+    steps:
+      - intent: solicitar_termos_condicoes_servico
+      - action: utter_solicitar_termos_condicoes_servico

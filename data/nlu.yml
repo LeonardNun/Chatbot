@@ -1,0 +1,62 @@
+version: "3.1"
+
+nlu:
+- intent: solicitar_suporte
+  examples: |
+    - Gostaria de solicitar suporte técnico
+    - Preciso de ajuda com meu produto
+    - Meu aparelho parou de funcionar, preciso de suporte técnico
+
+- intent: perguntar_garantia
+  examples: |
+    - Como posso verificar a garantia do meu produto?
+    - Gostaria de saber mais sobre a garantia do produto que comprei
+    - Qual é a cobertura da garantia para meu novo produto?
+
+- intent: acompanhar_pedido_reparo
+  examples: |
+    - Quero acompanhar meu pedido de reparo
+    - Como posso verificar o status do meu reparo?
+    - Há alguma atualização sobre o reparo do meu produto?
+
+- intent: solicitar_informacoes_produto
+  examples: |
+    - Gostaria de mais informações sobre este produto
+    - Pode me enviar detalhes sobre as especificações do produto?
+    - Quais são os principais recursos deste produto?
+
+- intent: reportar_problema_produto
+  examples: |
+    - Quero reportar um problema com meu produto
+    - Meu produto está apresentando falhas, como proceder?
+    - Há um defeito no meu produto, preciso de assistência
+
+- intent: perguntar_atualizacoes_produto
+  examples: |
+    - Existem atualizações disponíveis para meu produto?
+    - Como posso verificar se há novas atualizações para meu aparelho?
+    - Quais são as últimas atualizações para o meu modelo de produto?
+
+- intent: solicitar_assistencia_configuracao
+  examples: |
+    - Preciso de ajuda para configurar meu produto
+    - Como configurar meu novo dispositivo?
+    - Gostaria de assistência para iniciar a configuração do meu produto
+
+- intent: dar_feedback_servico
+  examples: |
+    - Gostaria de dar feedback sobre o serviço que recebi
+    - Tenho algumas sugestões para melhorar seu serviço ao cliente
+    - Quero elogiar o excelente serviço que recebi
+
+- intent: perguntar_locais_assistencia
+  examples: |
+    - Onde posso encontrar uma assistência técnica próxima?
+    - Preciso de uma lista de centros de serviço na minha região
+    - Quais são os locais autorizados para assistência técnica?
+
+- intent: solicitar_termos_condicoes_servico
+  examples: |
+    - Gostaria de solicitar os termos e condições de serviço
+    - Onde posso encontrar os termos de serviço para o meu produto?
+    - Preciso dos termos e condições para usar este serviço

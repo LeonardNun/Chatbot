@@ -1,0 +1,32 @@
+version: "3.1"
+
+responses:
+  utter_solicitar_suporte:
+    - text: "Olá, descreva o problema que você está enfrentando."
+  
+  utter_perguntar_garantia:
+    - text: "Olá, posso verificar isso para você. Por favor, me forneça o número do seu pedido."
+
+  utter_acompanhar_pedido_reparo:
+    - text: "Olá, vou verificar seu reparo agora. Você pode me fornecer o número do pedido?"
+
+  utter_solicitar_informacoes_produto:
+    - text: "Olá, sobre qual produto você gostaria de saber mais?"
+
+  utter_reportar_problema_produto:
+    - text: "Olá, me conte mais sobre o que está acontecendo."
+
+  utter_perguntar_atualizacoes_produto:
+    - text: "Olá, qual é o modelo e a marca do seu aparelho?"
+
+  utter_solicitar_assistencia_configuracao:
+    - text: "Olá, que tipo de dispositivo você está tentando configurar?"
+
+  utter_dar_feedback_servico:
+    - text: "Olá, tudo certo! Qual feedback você gostaria de dar?"
+
+  utter_perguntar_locais_assistencia:
+    - text: "Olá, diga-nos seu CEP que vou procurar locais perto de você."
+
+  utter_solicitar_termos_condicoes_servico:
+    - text: "Olá, aqui estão os termos e condicões de serviço"

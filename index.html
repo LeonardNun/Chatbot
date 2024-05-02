@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <style>
+        body { margin: 0; padding: 20px; display: flex; flex-direction: column; height: 100vh; }
+        ul { list-style-type: none; margin: 0; padding: 0; overflow: auto; flex-grow: 1; }
+        li { margin-bottom: 10px; border-radius: 5px; padding: 8px; }
+        form { display: flex; }
+        input { flex-grow: 1; margin-right: 10px; }
+        button { width: 100px; }
+        #messages { margin-bottom: 20px; background: #f4f4f4; padding: 10px; border-radius: 10px; }
+    </style>
+    <script>
+        var socket = io();  // Estabelece a conexão socket com o servidor
+
+        function sendMessage() {
+            var message = document.getElementById('m').value.trim();
+            if (message) {
+                socket.emit('chat message', message);  // Envia a mensagem para o servidor
+                document.getElementById('m').value = '';  // Limpa o campo de entrada
+            }
+            return false;  // Impede que o formulário seja submetido da maneira tradicional
+        }
+
+        socket.on('bot reply', function(msg) {
+            var item = document.createElement('li');
+            item.textContent = msg;
+            document.getElementById('messages').appendChild(item);
+            window.scrollTo(0, document.body.scrollHeight);
+        });
+    </script>
+</head>
+<body>
+    <ul id="messages"></ul>
+    <form action="" onsubmit="return sendMessage()">
+        <input id="m" autocomplete="off" placeholder="Digite sua mensagem aqui" /><button>Enviar</button>
+    </form>
+</body>
+</html>
