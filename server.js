@@ -5,6 +5,8 @@ const fs = require('fs');
 const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
+const os = require('os');
+const path = require('path');
 
 app.use(express.json());
 
@@ -12,7 +14,8 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-const caminhoDoArquivo = 'C:/Users/leo_n/Downloads/conversas.txt';
+const caminhoDoArquivo = 'C:/Users/leo_n/Downloads/conversas.txt'; // Colocar caminho aq
+const desktopPath = path.join(os.homedir(), 'Desktop');
 
 function salvarConversa(mensagem, resposta) {
     const linha = `Usuário: ${mensagem}\nBot: ${resposta}\n\n`;
@@ -33,9 +36,9 @@ io.on('connection', (socket) => {
         }).catch(error => {
             console.error('Erro ao enviar mensagem:', error);
             socket.emit('bot reply', "Ocorreu um erro ao processar sua mensagem.");
+        });
     });
-});
-
+    
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });
