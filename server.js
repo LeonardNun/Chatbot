@@ -12,22 +12,16 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-
-// Define o caminho do arquivo onde as conversas serão armazenadas
 const caminhoDoArquivo = 'C:/Users/leo_n/Downloads/conversas.txt';
 
-// Função para salvar conversa no arquivo
 function salvarConversa(mensagem, resposta) {
     const linha = `Usuário: ${mensagem}\nBot: ${resposta}\n\n`;
     fs.appendFile(caminhoDoArquivo, linha, (err) => {
         if (err) throw err;
-        console.log('A conversa foi salva!');
     });
 }
 
 io.on('connection', (socket) => {
-    console.log('a user connected');
-
     socket.on('chat message', (msg) => {
         axios.post('http://localhost:5005/webhooks/rest/webhook', {
             sender: "user",
