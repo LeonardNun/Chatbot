@@ -6,32 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="http://localhost:3000/socket.io/socket.io.js"></script>
     <style>
-        body { margin: 0; padding: 20px; display: flex; flex-direction: column; height: 100vh; }
+        body { padding: 20px; display: flex; flex-direction: column; height: 90vh; }
         ul { list-style-type: none; margin: 0; padding: 0; overflow: auto; flex-grow: 1; }
         li { margin-bottom: 10px; border-radius: 5px; padding: 8px; }
         form { display: flex; }
         input { flex-grow: 1; margin-right: 10px; }
         button { width: 100px; }
+        .user { background-color: #d1ecf1; }
+        .bot { background-color: #fefefe; }
         #messages { margin-bottom: 20px; background: #f4f4f4; padding: 10px; border-radius: 10px; }
     </style>
     <script>
-        var socket = io();  // Estabelece a conexão socket com o servidor
+        var socket = io();
 
         function sendMessage() {
             var message = document.getElementById('m').value.trim();
             if (message) {
+                var itemUser = document.createElement('li');
+                itemUser.textContent = 'Usuário: ' + message;
+                itemUser.className = 'user';  // Adiciona a classe ao item do usuário
+                document.getElementById('messages').appendChild(itemUser);
+        
                 socket.emit('chat message', message);  // Envia a mensagem para o servidor
                 document.getElementById('m').value = '';  // Limpa o campo de entrada
             }
+            window.scrollTo(0, document.body.scrollHeight);
             return false;  // Impede que o formulário seja submetido da maneira tradicional
         }
 
         socket.on('bot reply', function(msg) {
-            var item = document.createElement('li');
-            item.textContent = msg;
-            document.getElementById('messages').appendChild(item);
+            var itemBot = document.createElement('li');
+            itemBot.textContent = 'Chatbot: ' + msg;
+            itemBot.className = 'bot';  // Adiciona a classe ao item do bot
+            document.getElementById('messages').appendChild(itemBot);
             window.scrollTo(0, document.body.scrollHeight);
         });
+        
     </script>
 </head>
 <body>
