@@ -30,3 +30,55 @@ responses:
 
   utter_solicitar_termos_condicoes_servico:
     - text: "Olá, aqui estão os termos e condicões de serviço"
+
+  utter_pergunta_id_pedido:
+    - text: "Por favor, me informe o número do seu pedido para que eu possa verificar."
+
+  utter_pergunta_info_produto:
+    - text: "Me diga qual informação você gostaria de saber sobre o produto?"
+
+  utter_agradece_feedback:
+    - text: "Obrigado pelo seu feedback!"
+
+  utter_pergunta_produto_especifico:
+    - text: "Para qual produto você deseja saber os termos e condições?"
+
+  utter_termos_e_condicoes:
+    - text: "Os termos e condições do produto solicitado são: [Termos simulados aqui]."
+
+  utter_pergunta_cep:
+    - text: "Por favor, informe seu CEP para localizarmos o centro de assistência mais próximo."
+
+  utter_da_lugares_assistencia:
+    - text: "Os locais de assistência técnica mais próximos ao CEP fornecido são: [Locais simulados aqui]."
+
+  utter_pergunta_sobre_feedback:
+    - text: "Pode me dar mais detalhes sobre sua experiência?"
+
+  utter_pergunta_detalhes_problema:
+    - text: "Por favor, descreva o problema com mais detalhes."
+
+  utter_agradece_reporte:
+    - text: "Obrigado por reportar o problema. Nossa equipe vai analisar e entrar em contato em breve."
+
+  utter_pergunta_modelo:
+    - text: "Qual é o modelo do seu produto para o qual você deseja verificar atualizações?"
+
+  utter_da_update:
+    - text: "As últimas atualizações para o seu modelo são: [Detalhes das atualizações]."
+
+  utter_pergunta_dispositivo:
+    - text: "Qual é o tipo de dispositivo que você está tentando configurar?"
+
+  utter_instrucoes:
+    - text: "Aqui estão as instruções para configurar seu dispositivo [Tipo do Dispositivo]."
+
+  utter_pergunta_detalhes_suporte:
+    - text: "Pode me dar mais detalhes sobre o que você precisa?"
+
+  utter_prove_resposta_suporte:
+    - text: "Aqui está a assistência para o seu problema: [Detalhes da assistência]."
+
+actions:
+  - action_verify_order
+  - action_collect_feedback

@@ -1,30 +1,69 @@
-# version: "3.1"
+version: "3.1"
 
-# stories:
+stories:
 
-# - story: happy path
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_great
-#   - action: utter_happy
+  - story: Solicitação de suporte técnico
+    steps:
+      - intent: solicitar_suporte
+      - action: utter_solicitar_suporte
 
-# - story: sad path 1
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: affirm
-#   - action: utter_happy
+  - story: Consulta garantia do produto com validação
+    steps:
+      - intent: perguntar_garantia
+      - action: utter_pergunta_id_pedido
+      - intent: user_prove_id
+      - action: action_verify_order
+      - action: utter_perguntar_garantia
 
-# - story: sad path 2
-#   steps:
-#   - intent: greet
-#   - action: utter_greet
-#   - intent: mood_unhappy
-#   - action: utter_cheer_up
-#   - action: utter_did_that_help
-#   - intent: deny
-#   - action: utter_goodbye
+  - story: Acompanhamento de pedido de reparo
+    steps:
+      - intent: acompanhar_pedido_reparo
+      - action: utter_pergunta_id_pedido
+      - intent: user_prove_id
+      - action: action_verify_order
+      - action: utter_acompanhar_pedido_reparo
+
+  - story: Informações detalhadas sobre produtos
+    steps:
+      - intent: solicitar_informacoes_produto
+      - action: utter_pergunta_info_produto
+      - intent: user_prove_info_produto
+      - action: utter_solicitar_informacoes_produto
+
+  - story: Reportar problema com produto
+    steps:
+      - intent: reportar_problema_produto
+      - action: utter_reportar_problema_produto
+
+  - story: Atualizações de produtos
+    steps:
+      - intent: perguntar_atualizacoes_produto
+      - action: utter_perguntar_atualizacoes_produto
+
+  - story: Assistência na configuração de produto
+    steps:
+      - intent: solicitar_assistencia_configuracao
+      - action: utter_solicitar_assistencia_configuracao
+
+  - story: Feedback sobre o serviço
+    steps:
+      - intent: dar_feedback_servico
+      - action: action_collect_feedback
+      - action: utter_agradece_feedback
+
+  - story: Localização de assistência técnica
+    steps:
+      - intent: perguntar_locais_assistencia
+      - action: utter_perguntar_locais_assistencia
+
+  - story: Termos e condições de serviço
+    steps:
+      - intent: solicitar_termos_condicoes_servico
+      - action: utter_solicitar_termos_condicoes_servico
+
+  - story: Verificação de pedido
+    steps:
+      - intent: acompanhar_pedido_reparo
+      - action: utter_pergunta_id_pedido
+      - intent: user_prove_id
+      - action: action_verify_order

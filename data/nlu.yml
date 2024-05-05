@@ -60,3 +60,69 @@ nlu:
     - Gostaria de solicitar os termos e condições de serviço
     - Onde posso encontrar os termos de serviço para o meu produto?
     - Preciso dos termos e condições para usar este serviço
+
+- intent: detalhar_feedback_negativo
+  examples: |
+    - Não gostei do serviço
+    - O produto chegou com defeito
+    - Não estou satisfeito com a qualidade
+
+- intent: detalhar_feedback_positivo
+  examples: |
+    - Estou muito satisfeito
+    - O produto é excelente
+    - Adorei o serviço
+
+- intent: user_prove_id
+  examples: |
+    - O número do pedido é 12345
+    - 67890
+    - Meu pedido é 54321
+
+- intent: user_prove_info_produto
+  examples: |
+    - É o modelo X100
+    - Estou perguntando sobre o smartphone modelo S12
+    - O produto é o laptop L123
+
+- intent: user_prove_cep
+  examples: |
+    - 12345-678
+    - O CEP é 90200-000
+    - 70000-000
+
+- intent: user_prove_detalhes_problema
+  examples: |
+    - O aparelho desliga sozinho
+    - A tela está quebrada e não liga mais
+    - O software parou de funcionar após a última atualização
+
+- intent: user_prove_modelo
+  examples: |
+    - É o modelo Galaxy S21
+    - Estou com o iPhone 12
+    - Uso um Dell Inspiron 15
+
+- intent: user_prove_tipo
+  examples: |
+    - É um smartphone
+    - Trata-se de um laptop
+    - É um tablet
+
+- intent: user_prove_detalhes_suporte
+  examples: |
+    - Não consigo acessar minha conta
+    - Meu pedido ainda não chegou
+    - Estou tendo problemas com o pagamento
+
+- intent: user_prove_feedback
+  examples: |
+    - Foi ótimo
+    - Não foi muito bom
+    - Poderia ter sido melhor
+
+- intent: user_prove_qual_termos
+  examples: |
+    - Quero saber sobre a garantia
+    - Estou interessado nas condições de devolução
+    - Gostaria de entender melhor a política de privacidade
