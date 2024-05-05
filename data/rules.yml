@@ -1,75 +1,51 @@
-version: "3.1"
+# rules.yml
 
-rules:
-  - rule: Responder a solicitação de suporte técnico e solicitar mais informações
-    steps:
-      - intent: solicitar_suporte
-      - action: utter_solicitar_suporte
-      - action: utter_pergunta_detalhes_suporte
-      - intent: user_prove_detalhes_suporte
-      - action: utter_prove_resposta_suporte
+- rule: Responder a solicitação de suporte técnico
+  steps:
+    - intent: solicitar_suporte
+    - action: utter_solicitar_suporte
 
-  - rule: Responder a perguntas sobre a garantia do produto com verificação
-    steps:
-      - intent: perguntar_garantia
-      - action: utter_pergunta_id_pedido
-      - action: action_verify_order
-      - action: utter_perguntar_garantia
+- rule: Responder a perguntas sobre a garantia do produto
+  steps:
+    - intent: perguntar_garantia
+    - action: utter_perguntar_garantia
 
-  - rule: Acompanhar um pedido de reparo com validação
-    steps:
-      - intent: acompanhar_pedido_reparo
-      - action: utter_pergunta_id_pedido
-      - action: action_verify_order
-      - action: utter_acompanhar_pedido_reparo
+- rule: Acompanhar um pedido de reparo
+  steps:
+    - intent: acompanhar_pedido_reparo
+    - action: utter_acompanhar_pedido_reparo
 
-  - rule: Fornecer informações sobre um produto detalhadas
-    steps:
-      - intent: solicitar_informacoes_produto
-      - action: utter_pergunta_info_produto
-      - action: utter_solicitar_informacoes_produto
+- rule: Fornecer informações sobre um produto
+  steps:
+    - intent: solicitar_informacoes_produto
+    - action: utter_solicitar_informacoes_produto
 
-  - rule: Reportar um problema com o produto
-    steps:
-      - intent: reportar_problema_produto
-      - action: utter_reportar_problema_produto
-      - action: utter_pergunta_detalhes_problema
-      - intent: user_prove_detalhes_problema
-      - action: utter_agradece_reporte
+- rule: Reportar um problema com o produto
+  steps:
+    - intent: reportar_problema_produto
+    - action: utter_reportar_problema_produto
 
-  - rule: Informar sobre atualizações de produtos
-    steps:
-      - intent: perguntar_atualizacoes_produto
-      - action: utter_pergunta_modelo
-      - intent: user_prove_modelo
-      - action: utter_da_update
+- rule: Informar sobre atualizações de produtos
+  steps:
+    - intent: perguntar_atualizacoes_produto
+    - action: utter_perguntar_atualizacoes_produto
 
-  - rule: Assistir na configuração de um produto e solicitar tipo de dispositivo
-    steps:
-      - intent: solicitar_assistencia_configuracao
-      - action: utter_pergunta_dispositivo
-      - intent: user_prove_tipo
-      - action: utter_instrucoes
+- rule: Assistir na configuração de um produto
+  steps:
+    - intent: solicitar_assistencia_configuracao
+    - action: utter_solicitar_assistencia_configuracao
 
-  - rule: Receber e responder a feedback detalhado
-    steps:
-      - intent: dar_feedback_servico
-      - action: utter_pergunta_sobre_feedback
-      - intent: user_prove_feedback
-      - action: utter_agradece_feedback
+- rule: Receber feedback sobre o serviço
+  steps:
+    - intent: dar_feedback_servico
+    - action: utter_dar_feedback_servico
 
-  - rule: Informar sobre locais de assistência técnica detalhados
-    steps:
-      - intent: perguntar_locais_assistencia
-      - action: utter_pergunta_cep
-      - intent: user_prove_cep
-      - action: utter_da_lugares_assistencia
+- rule: Informar sobre locais de assistência técnica
+  steps:
+    - intent: perguntar_locais_assistencia
+    - action: utter_perguntar_locais_assistencia
 
-  - rule: Fornecer termos e condições de serviço 
-    steps:
-      - intent: solicitar_termos_condicoes_servico
-      - action: utter_pergunta_produto_especifico
-      - intent: user_prove_info_produto
-      - action: utter_termos_e_condicoes
-
-
+- rule: Fornecer termos e condições de serviço
+  steps:
+    - intent: solicitar_termos_condicoes_servico
+    - action: utter_termos_e_condicoes
