@@ -24,20 +24,20 @@
             if (message) {
                 var itemUser = document.createElement('li');
                 itemUser.textContent = 'Usuário: ' + message;
-                itemUser.className = 'user';  // Adiciona a classe ao item do usuário
+                itemUser.className = 'user';
                 document.getElementById('messages').appendChild(itemUser);
         
-                socket.emit('chat message', message);  // Envia a mensagem para o servidor
-                document.getElementById('m').value = '';  // Limpa o campo de entrada
+                socket.emit('chat message', message);
+                document.getElementById('m').value = '';
             }
             window.scrollTo(0, document.body.scrollHeight);
-            return false;  // Impede que o formulário seja submetido da maneira tradicional
+            return false;
         }
 
         socket.on('bot reply', function(msg) {
             var itemBot = document.createElement('li');
             itemBot.textContent = 'Chatbot: ' + msg;
-            itemBot.className = 'bot';  // Adiciona a classe ao item do bot
+            itemBot.className = 'bot'; 
             document.getElementById('messages').appendChild(itemBot);
             window.scrollTo(0, document.body.scrollHeight);
         });
